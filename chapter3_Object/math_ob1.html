@@ -23,6 +23,20 @@
     document.write(ceilNum, "<br>");
     document.write(rndNum, "<br>");
     document.write(piNum, "<br>");
+
+    // random() 메서드에 대한 추가 지식
+    Math.random() * 10 // 0부터 10까지 실수로 난수를 반환
+    document.write(Math.random() * 10, "<br>");
+
+    Math.floor(Math.random() * 11); // 0부터 10까지 난수를 발생하여 소수점 값을 제거
+    document.write(Math.floor(Math.random() * 11), "<br>");
+
+    Math.floor(Math.random() * 31); // 0부터 30까지 정수로 난수를 발생
+    document.write(Math.floor(Math.random() * 31), "<br>");
+
+    Math.floor(Math.random() * 31) + 120; // 120부터 150까지 정수로 난수를 발생
+    document.write(Math.floor(Math.random() * 31) + 120, "<br>");
+
   </script>
 </head>
 <body>
