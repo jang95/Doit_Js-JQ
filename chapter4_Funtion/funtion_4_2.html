@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funtion_5</title>
+  <script>
+    /*
+      함수 정의문에서 arguments을 사용하면 매개변수를 사용하는 것처럼 함수 호출문의 값을 받아 올 수 있음
+      함수 정의문에서 매개변수가 없는 상태에서 데이터를 전달하여 함수를 호출하면 그 값은 배열에 저장
+    */
+
+    function sum() {
+      var sum = arguments[0] + arguments[1] + arguments[2];
+
+      document.write(sum, "<br>");
+    }
+
+    sum(10, 20, 30);
+
+    function sumFor() {
+      var sumFor = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        sumFor += arguments[i];
+      }
+
+      document.write(sumFor);
+    }
+
+    sumFor(100, 200, 300);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
