@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>function_scope_1</title>
+  <script>
+    /*
+      Scope? 변수 또는 함수의 유효 범위를 가리킴
+      
+      지역 변수: scope 영역에서 선언한 변수
+                scope 영역에서만 사용할 수 있음
+      
+      지역 함수: scope 영역에서 선언한 함수
+                scope 영역에서만 호출 가능
+    */
+    var num = 100;
+    // function menu() {
+    //   num += 100;
+    //   alert(num);
+    // }
+    menu();
+
+    function menu() {
+      alert(num);
+    }
+
+    function menu() {
+      num += 100;
+      alert(num);
+    }
+
+    // 위의 함수는 제거되고 아래의 함수만 호출
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
