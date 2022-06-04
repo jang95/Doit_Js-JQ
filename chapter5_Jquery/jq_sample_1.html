@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jq-sample</title>
+  <script src="../js/jquery.js">
+      /*
+        선택자는 HTML 요소를 선택해서 가져옴
+        jquery 선택자를 사용하면 '동적'으로 스타일 적용할 수 있음
+
+        -- 문서 객체 모델 (DOM, Document Object Model)--
+            HTML 문서의 기본 객체 구조는 최사위 객체인 <html>이 있고 하위 객체로 <head>, <body>가 있음
+            문서 객체 모델에서는 모든 태그를 '객체'라고 부르며, 태그에는 기능과 속성이 포함되어 있음
+      */
+  </script>
+  <script>
+    $(function() {
+      $("#title").css("color", "red");
+    });
+  </script>
+</head>
+<body>
+  <h1 id="title">제목</h1>
+</body>
+</html>
