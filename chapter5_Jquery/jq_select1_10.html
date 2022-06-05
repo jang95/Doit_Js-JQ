@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jq-selector_10</title>
+  <script src="../js/jquery.js"></script>
+  <script>
+    /*
+      형 요소 선택자는 선택한 요소를 기준으로 바로 이전 형제 요소만 선택합니다.
+      그리고 동생 요소 선택자는 선택한 요소를 기분으로 바로 다음 형제 요소만 선택합니다.
+    */
+
+    $(function() {
+      var style_1 = {
+        "background-color": "#0ff",
+        "border": "2px soild #f00"
+      }
+      var style_2 = {
+        "background-color": "#ff0",
+        "border": "2px dashed #f00"
+      }
+
+      $(".txt").prev()
+      .css(style_1);
+
+      $(".txt + p").css(style_2); // 바로 다음 요소에 적용
+
+      $(".txt").next().next() // 선택된 요소의 다음, 다음 요소에 적용 (둘다 적용되는 것이 아님!)
+      .css(style_2);
+    });
+  </script>
+</head>
+
+<body>
+  <div id="wrap">
+    <h1>인접 관계 선택자</h1>
+    <p>내용1</p>
+    <p class="txt">내용2</p>
+    <p>내용3</p>
+    <p>내용4</p>
+  </div>
+</body>
+
+</html>
