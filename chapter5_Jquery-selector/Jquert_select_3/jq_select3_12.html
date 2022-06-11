@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>replaceAll()/replaceWith()</title>
+  <script src="../../js/jquery.js"></script>
+  <script>
+    /*
+      replaceAll(), replaceWith() 메서드는 t선택한 요소를 새 요소로 바꿀 때 사용
+      주로 선택한 모든 요소를 한꺼번에 바꿀 때 사용
+     */
+    $(function () {
+      $("h2").replaceWith("<h3>replace method</h3>");
+      $("<p>Change</p>").replaceAll("div");
+    });
+  </script>
+</head>
+
+<body>
+	<section class="box1">
+		<h2>제목1</h2>  <!-- <h3>replace method</h3> -->
+		<div>내용1</div>  <!-- <p>Change</p> -->
+		<div>내용2</div>  <!-- <p>Change</p> -->
+	</section>
+	<section class="box2">
+		<h2>제목2</h2>  <!-- <h3>replace method</h3> -->
+		<div>내용3</div>  <!-- <p>Change</p> -->
+		<div>내용4</div>  <!-- <p>Change</p> -->
+	</section>
+</body>
+
+</html>
