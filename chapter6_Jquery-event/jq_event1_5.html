@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스 이벤트 메서드</title>
+  <script src="../js/jquery.js"></script>
+  <script>
+    /*
+      click(): 선택한 요소를 클릭했을 때 이벤트를 발생시키거나 선택한 요소에 강제로
+               클릭 이벤트를 발생시킬 때 사용
+      dbclick(): 선택한 요소를 연속해서 두 번 클릭 했을 때 이벤트를 발생시키거나
+                 선택한 요소에 강제로 더블클릭 이벤트를 발생
+    */
+
+    /*
+      * <a>, <form> 태그에 클릭 이벤트 적용 시 기본 이벤트 차단하기
+      <a> 요소에 click이나 dbclick을 등록하면 클릭할 때 마다 <a>에 링크된 주소로 이동하는 문제가 발생
+      => 이 문제 해결을 위해 <a> 요소의 기본 이벤트를 차단
+         'e.preventDefault();' => prevent는 '막다', Default는 기본 이벤트를 의미
+    */
+
+    $(function () {
+      $(".btn1").on("click", function (e) {
+        e.preventDefault(); // <a>요소에 링크된 페이지로 이동하는 기본 이벤트를 차단
+        $(".txt1").css({ "background-color": "#ff0" });
+      });
+      $(".btn2").on("click", function (e) {
+        $(".txt2").css({ "background-color": "#0f0" });
+      });
+      $(".btn3").on("dblclick", function () {
+        $(".txt3").css({ "background-color": "#0f0" });
+      })
+    });
+  </script>
+</head>
+
+<body>
+  <p><a href="http://www.easyspub.co.kr/" class="btn1">버튼1</a></p>
+  <p class="txt1">내용1</p>
+  <p><a href="http://www.easyspub.co.kr/" class="btn2">버튼2</a></p>
+  <p class="txt2">내용2</p>
+  <p><button class="btn3">버튼3</button></p>
+  <p class="txt3">내용3</p>
+</body>
+
+</html>

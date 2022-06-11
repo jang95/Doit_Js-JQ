@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로딩 이벤트 메서드</title>
+  <script src="../js/jquery.js"></script>
+  <script>
+    /*
+      사용자가 브라우저에 HTML 문서를 요청하여 HTML 문서의 로딩이 완료되면 이벤트 핸들러를 실행
+      
+      ready(): 사용자가 사이트를 방문할 때 요청한 HTML 문서 객체(document)의 로딩이 끝나면 이벤트를 발생
+      load(): 외부에 연동된 소스(iframe, img, video)의 로딩이 끝나면 이벤트를 발생
+    */
+
+    $(function () {
+      $(document).ready( function () {
+        var h1 = $(".img1").height();
+        console.log("ready :", h1);
+      });
+
+      /*
+      Jquery 3.0 이상의 버전에서는 load(), unload(), error()가 deprecated 되었음
+        * 사용방법
+        => $(window).on('load', funtion(){
+          ...
+        });
+      */
+      $(window).on("load", function () {
+        var h2 = $(".img1").height();
+        console.log("load :", h2);
+      })
+    });
+  </script>
+</head>
+
+<body>
+	<p>
+		<img src="http://place-hold.it/300X300" class="img1">
+	</p>
+</body>
+
+</html>
