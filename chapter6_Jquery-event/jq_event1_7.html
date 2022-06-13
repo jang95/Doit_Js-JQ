@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스 이벤트 메서드</title>
+  <script src="../js/jquery.js"></script>
+  <script>
+    /*
+      mouseenter(): 대상 요소의 경계 범위에 마우스 포인터가 들어오면 이벤트를 발생
+                    
+      mouseleave(): 대상 요소의 경계 범위에서 마우스 포인터가 완전히 벗어나면 이벤트를 발생
+
+      *** mouseover는 대상 요소에 마우스 포인터가 올라가면 발생하는 이벤트
+          mouseenter는 이벤트 대상이 포함된 범위에 마우스 포인터가 들어오면 발생하는 이벤트
+    */
+
+    $(function() {
+      $("#box_1").on("mouseenter", function() {
+        $("#box_1").css({"background-color" : "yellow"});
+      });
+
+      $("#box_2").on("mouseleave", function() {
+        $("#box_2").css({"background-color" : "pink"});
+      })
+    })
+  </script>
+</head>
+
+<body>
+  <h1>mouseout</h1>
+  <div id="box_1">
+          <p><a href="#">내용1</a></p>
+          <p><a href="#">내용2</a></p>
+          <p><a href="#">내용3</a></p>
+  </div>
+  
+  <h1>mouseleave</h1>
+  <div id="box_2">
+          <p><a href="#">내용4</a></p>
+          <p><a href="#">내용5</a></p>
+          <p><a href="#">내용6</a></p>
+  </div>
+</body>
+
+</html>

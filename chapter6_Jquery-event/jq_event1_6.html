@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마우스 이벤트 메서드</title>
+  <script src="../js/jquery.js"></script>
+  <script>
+    /*
+      mouseover(): 선택한 요소에 마우스 포인터를 올릴 때마다 이벤트를 발생시키거나
+                   선택한 요소에 mouseover 이벤트를 강제로 발생
+
+      mouseout(): 선택한 요소에서 마우스 포인터가 벗어날 때마다 이벤트를 발생시키거나
+                  선택한 요소에 mouseout 이벤트를 강제로 발생
+
+      hover(): 선택한 요소에 마우스 포인터가 올라갈 때와 선택한 요소에서 벗어날 때 각각 이벤트를 발생시키며,
+               이때 각각 다른 이벤트 핸들러를 실행 시킴
+    */
+
+    $(function () {
+      $(".btn1").on({
+        "mouseover" : function() {
+        $(".txt1").css({ "background-color" : "yellow" });
+      },
+        "mouseout" : function () {
+          $(".txt1").css({ "background" : "none" });
+        }
+      });
+
+      $(".btn2").hover(function() {
+        $(".txt2").css({ "background-color" : "aqua" });
+      }, function () {
+        $(".txt2").css({ "background" : "none" });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <p><button class="btn1">Mouse Over/Mouse Out</button></p>
+  <p class="txt1">내용1</p>
+  <p><button class="btn2">Hover</button></p>
+  <p class="txt2">내용2</p>
+</body>
+
+</html>
