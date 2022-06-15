@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>키보드 메서드</title>
+  <script src="../js/jquery.js"></script>
+  <script>
+    /*
+      keydown(): 모든 키(한글 키 제외)에 대해서 이벤트를 발생
+      keypress(): 기능키(F1~F2, alt, ctrl, shift, 위 화살표, backspace, Caps Lock, 한/영, Tab)에 대해서는
+                  이벤트를 발생시키지 않음
+      keyup(): 자판의 키를 눌렀다 키에서 손을 떼면 이벤트를 발생시키거나 keyup 이벤트를 강제로 발생
+    */
+    $(function () {
+      $(document).on("keydown", keyEventFnc);
+      function keyEventFnc(e) {
+        var direct = "";
+
+        switch (e.keyCode) {
+          case 37:
+            direct = "LEFT";
+            break;
+          case 38:
+            direct = "TOP";
+            break;
+          case 39:
+            direct = "RIGHT";
+            break;
+          case 40:
+            direct = "BOTTOM"
+            break;
+        }
+
+        if (direct) $("#user_id").val(direct);
+      }
+    });
+
+  </script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <p><input type="text" name="user_id" id="user_id"></p>
+</body>
+
+</html>
